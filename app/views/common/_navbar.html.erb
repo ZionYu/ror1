@@ -1,4 +1,14 @@
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">RoR1</a>
-  <%= link_to('登入','#') %>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <p><%= link_to 'RoR1', root_path, class:"navbar-brand" %></p>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+      <% if !current_user %>
+        <%= link_to("註册", new_user_registration_path,class:"nav-link") %>
+        <%= link_to("登入", new_user_session_path,class:"nav-link") %>
+      <% else %>
+        <p class="p-2">Hi!,<%= current_user.email %></p>
+        <%= link_to("登出", destroy_user_session_path, method: :delete, data: {confirm:"Are you sure?"}, class:"nav-link") %>
+      <% end %>
+    </div>
+  </div>
 </nav>
