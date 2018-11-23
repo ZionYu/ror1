@@ -19,7 +19,7 @@
             <%= link_to(group.title, group_path(group)) %>
           </td>
           <td>
-            <%= group.description %>
+            <%= simple_format(group.description) %>
           </td>
           <td>
             <%= group.user.email %>
