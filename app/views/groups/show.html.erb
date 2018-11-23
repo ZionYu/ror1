@@ -9,7 +9,7 @@
         <%= link_to("Join Group", join_group_path(@group), method: :post, class: "btn btn-outline-success") %>
       <% end %>
     </span>
-    <%= link_to("New Post", new_group_post_path(@group), class: "btn btn-outline-primary float-right")%>
+    <%= link_to("New Post", new_group_post_path(@group), class: "btn btn-outline-primary float-right") if current_user.is_member_of?(@group) %>%>
     <% if current_user && current_user == @group.user %>
       <%= link_to("Edit", edit_group_path(@group), class: "btn btn-primary float-right")%>
     <% end %>
