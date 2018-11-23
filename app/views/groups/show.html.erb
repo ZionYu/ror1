@@ -1,5 +1,6 @@
 <div class="col-md-12">
   <div class="group">
+    <%= link_to("New Post", new_group_post_path(@group), class: "btn btn-outline-primary float-right")%>
     <% if current_user && current_user == @group.user %>
       <%= link_to("Edit", edit_group_path(@group), class: "btn btn-primary float-right")%>
     <% end %>
